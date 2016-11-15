@@ -1,0 +1,9 @@
+<input #term (keyup)="searchConfluence(term.value)" />
+<div *ngIf="results && results.length == 0">
+  No items found
+</div>
+<ul style="list-style: none">
+  <li *ngFor="let item of results ">
+    {{item.title}}
+  </li>
+</ul>

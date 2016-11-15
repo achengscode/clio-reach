@@ -1,0 +1,13 @@
+<div *ngIf="fileCreated">
+  <search></search>
+</div>
+<div *ngIf="!fileCreated">
+  Looks like you need to add your JIRA login credentials before using this app!
+  <form (ngSubmit)="storeFileContents($event)" #loginForm="ngForm">
+    <label for="username">User Name</label>
+    <input type="text" name="username" id="username" required [(ngModel)]="login.user" #username="ngModel"/>
+    <label for="pword">Password</label>
+    <input type="password" name="pword" id="pword" required [(ngModel)]="login.pass" #pword="ngModel"/>
+    <button type="submit">Login</button>
+  </form>
+</div>
